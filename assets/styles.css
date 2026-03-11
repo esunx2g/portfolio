@@ -1,0 +1,114 @@
+:root {
+    --white: #ffffff;
+    --off-white: #fafafa;
+    --academic-dark: #0f172a;
+    --ink: #1e293b;
+    --muted-ink: #64748b;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    background-color: var(--white);
+    color: var(--ink);
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+}
+
+.heading-font { font-family: 'Pretendard', sans-serif; }
+.mono { font-family: 'Roboto Mono', monospace; font-size: 0.85em; }
+
+.content-card {
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 0;
+    transition: all 0.2s ease;
+}
+
+.content-card:last-child {
+    border-bottom: none;
+}
+
+.content-card:hover {
+    border-bottom-color: var(--academic-dark);
+    background-color: var(--off-white);
+}
+
+.section-scroll {
+    max-height: 700px;
+    overflow-y: auto;
+    padding: 0 1.5rem;
+    background-color: var(--white);
+}
+
+.section-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.section-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.section-scroll::-webkit-scrollbar-thumb {
+    background: var(--academic-dark);
+    border-radius: 10px;
+}
+
+.keyword-tag {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.meta-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 0.125rem 0.5rem;
+    color: #6b7280;
+    text-transform: uppercase;
+}
+
+.equation-box {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+}
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--academic-dark);
+    transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.profile-frame {
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.25rem !important; }
+}
