@@ -5,6 +5,9 @@
     --ink: #1e293b;
     --muted-ink: #64748b;
     --border: #e2e8f0;
+    --accent: #2563eb;
+    --accent-soft: #eff6ff;
+    --accent-border: #bfdbfe;
 }
 
 body {
@@ -29,8 +32,8 @@ body {
 }
 
 .content-card:hover {
-    border-bottom-color: var(--academic-dark);
-    background-color: var(--off-white);
+    border-bottom-color: rgba(37, 99, 235, 0.35);
+    background-color: #fbfdff;
 }
 
 .section-scroll {
@@ -54,12 +57,13 @@ body {
 }
 
 .keyword-tag {
-    background: #f1f5f9;
-    color: #475569;
+    background: var(--accent-soft);
+    color: #36506f;
     font-size: 0.7rem;
     font-weight: 600;
     padding: 2px 8px;
     border-radius: 2px;
+    border: 1px solid rgba(191, 219, 254, 0.7);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -67,11 +71,41 @@ body {
 .meta-tag {
     font-family: 'Roboto Mono', monospace;
     font-size: 10px;
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
+    background: #f8fbff;
+    border: 1px solid rgba(191, 219, 254, 0.75);
     padding: 0.125rem 0.5rem;
-    color: #6b7280;
+    color: #4b647f;
     text-transform: uppercase;
+}
+
+.section-divider {
+    border-bottom-color: rgba(37, 99, 235, 0.25);
+}
+
+.section-count {
+    color: #7c93ad;
+}
+
+.section-label {
+    color: #8ca0b8;
+}
+
+.icon-link-soft {
+    color: #94a3b8;
+}
+
+.icon-link-soft:hover {
+    color: var(--accent);
+}
+
+.contact-card-soft:hover {
+    border-color: rgba(37, 99, 235, 0.45);
+    background-color: #fbfdff;
+}
+
+.contact-card-soft:hover i,
+.contact-card-soft:hover span {
+    color: var(--accent);
 }
 
 .equation-box {
@@ -109,6 +143,93 @@ nav a:hover::after {
     border: 1px solid var(--border);
 }
 
+.home-banner {
+    position: relative;
+    min-height: 21rem;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(59, 130, 246, 0.2), transparent 24%),
+        radial-gradient(circle at 84% 28%, rgba(14, 165, 233, 0.14), transparent 22%),
+        radial-gradient(circle at 50% 82%, rgba(99, 102, 241, 0.12), transparent 24%),
+        linear-gradient(135deg, #020617 0%, #0f172a 52%, #111827 100%);
+}
+
+.home-banner__backdrop {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 48%),
+        radial-gradient(circle at 12% 72%, rgba(37, 99, 235, 0.12), transparent 18%),
+        radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.04), transparent 16%);
+}
+
+.home-banner__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.32), transparent 85%);
+}
+
+.home-banner__glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(12px);
+}
+
+.home-banner__glow--left {
+    top: 10%;
+    left: -4rem;
+    width: 12rem;
+    height: 12rem;
+    background: rgba(59, 130, 246, 0.16);
+}
+
+.home-banner__glow--right {
+    right: -3rem;
+    bottom: 5%;
+    width: 14rem;
+    height: 14rem;
+    background: rgba(14, 165, 233, 0.14);
+}
+
+.home-banner__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 5.5rem 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 21rem;
+}
+
+.home-banner__title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    max-width: 16ch;
+    color: #f8fafc;
+    font-family: 'Pretendard', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.05em;
+}
+
 @media (max-width: 768px) {
     .hero-title { font-size: 2.25rem !important; }
+    .home-banner {
+        min-height: 17.5rem;
+    }
+
+    .home-banner__inner {
+        padding-top: 4.75rem;
+        padding-bottom: 2rem;
+        min-height: 17.5rem;
+    }
 }

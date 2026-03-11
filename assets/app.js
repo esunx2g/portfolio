@@ -1,4 +1,5 @@
 const sectionTargets = [
+    { id: 'home-slot', file: 'sections/home.html' },
     { id: 'about-slot', file: 'sections/about.html' },
     { id: 'publications-slot', file: 'sections/publications.html' },
     { id: 'projects-slot', file: 'sections/projects.html' },
